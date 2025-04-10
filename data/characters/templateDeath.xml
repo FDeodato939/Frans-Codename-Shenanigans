@@ -1,0 +1,6 @@
+<!DOCTYPE codename-engine-character>
+<character icon="" sprite="" scale="" color="#">
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="firstDeath"/>
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="deathLoop"/>
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="deathConfirm"/>
+</character>

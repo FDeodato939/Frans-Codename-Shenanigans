@@ -1,0 +1,22 @@
+<!DOCTYPE codename-engine-character>
+<character icon="" sprite="" scale="" color="#">
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="idle"/>
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="hey"/>
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="scared"/>
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="pre-attack"/>
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="attack"/>
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="hit"/>
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="dodge"/>
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="singLEFT"/>
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="singDOWN"/>
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="singUP"/>
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="singRIGHT"/>
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="singLEFTmiss"/>
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="singDOWNmiss"/>
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="singUPmiss"/>
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="singRIGHTmiss"/>
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="singLEFT-alt"/>
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="singDOWN-alt"/>
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="singUP-alt"/>
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="singRIGHT-alt"/>
+</character>

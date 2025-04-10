@@ -1,0 +1,14 @@
+<!DOCTYPE codename-engine-character>
+<character icon="" sprite="" scale="" color="#">
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="danceLeft"/>
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="danceRight"/>
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="sad"/>
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="cheer"/>
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="scared"/>
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="hairBlow"/>
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="hairFall"/>
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="singLEFT"/>
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="singDOWN"/>
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="singUP"/>
+	<anim x="0" y="0" fps="24" loop="false" anim="" indices="" name="singRIGHT"/>
+</character>
