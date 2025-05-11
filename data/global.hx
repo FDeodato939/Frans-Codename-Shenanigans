@@ -1,24 +1,23 @@
-// libraries
-import lime.graphics.Image;
+// library
 import funkin.backend.utils.WindowUtils;
 // variable
-static var redirectStates:Map<FlxState, String> = [
+static var customStates:Map<FlxState, String> = [
     TitleState => 'custom/title',
     MainMenuState => 'custom/mainMenu',
-    FreeplayState => 'custom/freeplay',
+    FreeplayState => 'custom/overworld',
 ];
+// functions
 function preStateSwitch(){
     // resetTitle
     WindowUtils.resetTitle();
-    // window
+    // title
     window.title = "Frans Codename Shenanigans";
-    window.setIcon(Image.fromBytes(Assets.getBytes(Paths.image('game/icon'))));
     // camera
     FlxG.camera.bgColor = 0xff000000;
     // redirectStates
-    for(redirectState in redirectStates.keys()){
-        if(FlxG.game._requestedState is redirectState){
-            FlxG.game._requestedState = new ModState(redirectStates.get(redirectState));
+    for(redirectStates in customStates.keys()){
+        if(FlxG.game._requestedState is redirectStates){
+            FlxG.game._requestedState = new ModState(customStates.get(redirectStates));
         }
     }
 }

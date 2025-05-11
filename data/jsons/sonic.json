@@ -1,0 +1,24 @@
+{
+    "enemies": {
+        "motobug": [
+            {
+                "position": [755, 130]
+            },
+            {
+                "position": [1653, 98]
+            }
+        ],
+        "chopper": [
+            {
+                "position": [595, 335],
+                "maxVelocity": 950,
+                "acceleration": 540
+            },
+            {
+                "position": [1139, 335],
+                "maxVelocity": 1100,
+                "acceleration": 390
+            }
+        ]
+    }
+}

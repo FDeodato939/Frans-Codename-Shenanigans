@@ -1,0 +1,91 @@
+{
+	"doors": [
+		{
+			"position": [100, 224],
+			"songs": [
+				{
+					"name": "bopeebo",
+					"credits": {
+						"composers": "Kawai Sprite",
+						"artits": "PhantomArcade",
+						"charters": "ninjamuffin99"
+					}
+				},
+				{
+					"name": "fresh",
+					"credits": {
+						"composers": "Kawai Sprite",
+						"artits": "PhantomArcade",
+						"charters": "ninjamuffin99"
+					}
+				},
+				{
+					"name": "dadbattle",
+					"credits": {
+						"composers": "Kawai Sprite",
+						"artits": "PhantomArcade",
+						"charters": "ninjamuffin99"
+					}
+				}
+			]
+		},
+		{
+			"position": [184, 304],
+			"songs": [
+				{
+					"name": "spookeez",
+					"credits": {
+						"composers": "Kawai Sprite",
+						"artits": "PhantomArcade",
+						"charters": "ninjamuffin99"
+					}
+				},
+				{
+					"name": "south",
+					"credits": {
+						"composers": "Kawai Sprite",
+						"artits": "PhantomArcade",
+						"charters": "ninjamuffin99"
+					}
+				},
+				{
+					"name": "monster",
+					"credits": {
+						"composers": "Kawai Sprite",
+						"artits": "PhantomArcade",
+						"charters": "ninjamuffin99"
+					}
+				}
+			]
+		},
+		{
+			"position": [184, 416],
+			"songs": [
+				{
+					"name": "pico",
+					"credits": {
+						"composers": "Kawai Sprite",
+						"artits": "PhantomArcade",
+						"charters": "ninjamuffin99"
+					}
+				},
+				{
+					"name": "philly nice",
+					"credits": {
+						"composers": "Kawai Sprite",
+						"artits": "PhantomArcade",
+						"charters": "ninjamuffin99"
+					}
+				},
+				{
+					"name": "blammed",
+					"credits": {
+						"composers": "Kawai Sprite",
+						"artits": "PhantomArcade",
+						"charters": "ninjamuffin99"
+					}
+				}
+			]
+		}
+	]
+}

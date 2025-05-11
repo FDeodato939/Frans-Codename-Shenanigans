@@ -1,6 +1,5 @@
-// libraries
+// library
 import flixel.addons.display.FlxBackdrop;
-import flixel.addons.display.FlxGridOverlay;
 import flixel.effects.FlxFlicker;
 // variable
 var isSelected:Bool = false;
@@ -8,14 +7,14 @@ var isSelected:Bool = false;
 function create(){
 	// playMenuSong
     CoolUtil.playMenuSong();
-    // checkerboard
-    add(checkerboard = new FlxBackdrop(FlxGridOverlay.createGrid(32, 32, FlxG.width, FlxG.height, true, 0xff1a1a1a, 0xff333333)));
-    checkerboard.velocity.x = -50;
+    // notes
+    add(notes = new FlxBackdrop(Paths.image('menus/notes')));
+    notes.antialiasing = true;
+    notes.velocity.set(50, 50);
     // logo
-    logo = new FlxSprite(310, 125).loadGraphic(Paths.image('menus/logo'));
+    add(logo = new FlxSprite(310, 125).loadGraphic(Paths.image('menus/logo')));
     logo.scale.set(1, 1);
     logo.antialiasing = true;
-    add(logo);
     // blackBar
     add(blackBar = new FlxSprite(0, 570).makeGraphic(FlxG.width, 150, 0xff000000));
     // enter
@@ -29,12 +28,12 @@ function update(elapsed){
         if(controls.ACCEPT){
             // sound
             FlxG.sound.play(Paths.sound('menu/confirm'));
-            // isSelected
-            isSelected = true;
             // enter
-            FlxFlicker.flicker(enter, 0.85, 0.08, false, false, function(flick:FlxFlicker){
+            FlxFlicker.flicker(enter, 0.85, 0.08, false, false, function(flick){
                 FlxG.switchState(new MainMenuState());
             });
+            // isSelected
+            isSelected = true;
         }
     }
     // logo

@@ -1,0 +1,11 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="0.7" folder="stages/evadHouse/night">
+	<sprite name="skybox" sprite="skybox" x="230" y="-790" scale="1" antialiasing="true" scroll="1"/>
+	<sprite name="hills" sprite="hills" x="170" y="-710" scale="1" antialiasing="true" scroll="1"/>
+	<sprite name="backGrass" sprite="backGrass" x="-270" y="-50" scale="1" antialiasing="true" scroll="1"/>
+	<sprite name="gates" sprite="gates" x="110" y="-230" scale="1" antialiasing="true" scroll="1"/>
+	<sprite name="grass" sprite="grass" scale="1" antialiasing="true" scroll="1"/>
+	<girlfriend x="1150" y="-500"/>
+	<dad x="900" y="-600"/>
+	<boyfriend x="1700" y="-600"/>
+</stage>

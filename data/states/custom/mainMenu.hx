@@ -1,132 +1,95 @@
-// library
+// libraries
 import funkin.options.OptionsMenu;
 import funkin.editors.EditorPicker;
 import funkin.menus.ModSwitchMenu;
 import flixel.addons.display.FlxBackdrop;
-import flixel.addons.display.FlxGridOverlay;
+import flixel.text.FlxTextBorderStyle;
 import flixel.effects.FlxFlicker;
-// variable
-var itemList:Array<String> = ['freeplay', 'options'];
-var editorPicker:Bool = false;
-var modSwitchMenu:Bool = false;
+// variables
+var itemList:Array<String> = ['overworld', 'options'];
 var isSelected:Bool = false;
 var curSelected:Int = 0;
 // functions
 function create(){
 	// playMenuSong
     CoolUtil.playMenuSong();
-    // checkerboard
-    add(checkerboard = new FlxBackdrop(FlxGridOverlay.createGrid(32, 32, FlxG.width, FlxG.height, true, 0xff1a1a1a, 0xff333333)));
-    checkerboard.velocity.x = -50;
-    // tilemap
-    add(tilemap = new FlxBackdrop(Paths.image('menus/tilemap')));
-    tilemap.scale.set(3, 3);
-    tilemap.velocity.x = -70;
-    tilemap.screenCenter();
+    // notes
+    add(notes = new FlxBackdrop(Paths.image('menus/notes')));
+    notes.antialiasing = true;
+    notes.velocity.set(50, 50);
     // itemGroup
-    itemGroup = new FlxSpriteGroup();
-    for(i in 0...itemList.length){
-        item = new FlxSprite();
-        item.frames = Paths.getFrames('menus/mainMenu/'+itemList[i]);
-        item.animation.addByPrefix('idle', itemList[i]+' basic');
-        item.animation.addByPrefix('selected', itemList[i]+' white');
-        item.animation.play('idle');
-        item.scale.set(0.8, 0.8);
-        item.antialiasing = true;
-        item.screenCenter();
-        itemGroup.add(item);
-        item.ID = i;
+    add(itemGroup = new FlxGroup());
+    for(items in 0...itemList.length){
+        itemGroup.add(item = new FlxText(0, 0, FlxG.width, itemList[items].toUpperCase(), 42));
+        item.alignment = 'center';
+        item.borderStyle = FlxTextBorderStyle.OUTLINE;
+        item.borderSize = 3;
+        item.ID = items;
     }
-    add(itemGroup);
-    // freeplay
-    itemGroup.members[0].y = 250;
-    // options
-    itemGroup.members[1].y = 370;
+    itemGroup.members[0].y = 290;
+    itemGroup.members[1].y = 390;
+    // cinematicGroup
+    add(cinematicGroup = new FlxGroup());
+    for(i in 0...2){
+        cinematicGroup.add(bar = new FlxSprite().makeGraphic(FlxG.width, 150, FlxColor.BLACK));
+    }
+    cinematicGroup.members[0].y = 0;
+    cinematicGroup.members[1].y = 570;
 }
 function update(elapsed){
-    // modSwitchMenu
+    // ModSwitchMenu
     if(controls.SWITCHMOD){
-        if(!modSwitchMenu){
-            openSubState(new ModSwitchMenu());
-            modSwitchMenu = true;
-        }else{
-            closeSubState(new ModSwitchMenu());
-            modSwitchMenu = false;
-        }
+        // openSubState
+        openSubState(new ModSwitchMenu());
+        // persistent
+        persistentUpdate = false;
+        persistentDraw = true;
     }
-    // editorPicker
+    // EditorPicker
     if(FlxG.keys.justPressed.SEVEN){
-        if(!editorPicker){
-            openSubState(new EditorPicker());
-            editorPicker = true;
-        }else{
-            closeSubState(new EditorPicker());
-            editorPicker = false;
-        }
+        // openSubState
+        openSubState(new EditorPicker());
+        // persistent
+        persistentUpdate = false;
+        persistentDraw = true;
     }
-    // debugMenus
-    if(!editorPicker && !modSwitchMenu){
-        if(!isSelected){
-            // controls
-            if(controls.ACCEPT){
-                // sound
-                FlxG.sound.play(Paths.sound('menu/confirm'));
-                // camera
-                FlxTween.tween(FlxG.camera, {alpha: 0}, 0.8, {ease: FlxEase.smootherStepInOut});
-                // isSelected
-                isSelected = true;
-                // curSelected
-                if(curSelected == 0){
-                    new FlxTimer().start(0.85, function(){FlxG.switchState(new FreeplayState());});
-                }else if(curSelected == 1){
-                    new FlxTimer().start(0.85, function(){FlxG.switchState(new OptionsMenu());});
+    // isSelected
+    if(!isSelected){
+        if(controls.ACCEPT){
+            // sound
+            FlxG.sound.play(Paths.sound('menu/confirm'));
+            // isSelected
+            isSelected = true;
+            // curSelected
+            if(curSelected == 0){
+                new FlxTimer().start(0.85, function(){FlxG.switchState(new FreeplayState());});
+            }else if(curSelected == 1){
+                new FlxTimer().start(0.85, function(){FlxG.switchState(new OptionsMenu());});
+            }
+            // itemGroup
+            itemGroup.forEach(function(item:FlxSprite){
+                if(item.ID == curSelected){
+                    FlxFlicker.flicker(item, 0.85, 0.08, false, false);
                 }
-                // itemGroup
-                itemGroup.forEach(function(item:FlxSprite){
-                    if(item.ID == curSelected){
-                        FlxFlicker.flicker(item, 0.85, 0.08, false, false);
-                    }
-                });
-            }else if(controls.BACK){
-                // sound
-                FlxG.sound.play(Paths.sound('menu/cancel'));
-                // camera
-                FlxTween.tween(FlxG.camera, {alpha: 0}, 0.2, {ease: FlxEase.smootherStepInOut});
-                // state
-                new FlxTimer().start(0.25, function(){FlxG.switchState(new TitleState());});
-                // isSelected
-                isSelected = true;
-            }
-            if(controls.UP_P){
-                // sound
-                FlxG.sound.play(Paths.sound('menu/scroll'));
-                // curSelected
-                curSelected -= 1;
-            }else if(controls.DOWN_P){
-                // sound
-                FlxG.sound.play(Paths.sound('menu/scroll'));
-                // curSelected
-                curSelected += 1;
-            }
-            // keys
-            if(FlxG.keys.justPressed.H){
-                // state
-                FlxG.switchState(new ModState('custom/hl1'));
-                // isSelected
-                isSelected = true;
-            }
-            if(FlxG.keys.justPressed.M){
-                // state
-                FlxG.switchState(new ModState('custom/smb'));
-                // isSelected
-                isSelected = true;
-            }
-            if(FlxG.keys.justPressed.S){
-                // state
-                FlxG.switchState(new ModState('custom/sonic'));
-                // isSelected
-                isSelected = true;
-            }
+            });
+        }else if(controls.BACK){
+            // sound
+            FlxG.sound.play(Paths.sound('menu/cancel'));
+            // state
+            new FlxTimer().start(0.25, function(){FlxG.switchState(new TitleState());});
+            // isSelected
+            isSelected = true;
+        }
+        if(controls.UP_P){
+            // sound
+            FlxG.sound.play(Paths.sound('menu/scroll'));
+            // curSelected
+            curSelected -= 1;
+        }else if(controls.DOWN_P){
+            // sound
+            FlxG.sound.play(Paths.sound('menu/scroll'));
+            // curSelected
+            curSelected += 1;
         }
     }
     // curSelected
@@ -136,13 +99,11 @@ function update(elapsed){
         curSelected = 0;
     }
     // itemGroup
-    itemGroup.forEach(function(item:FlxSprite){
+    itemGroup.forEach(function(item){
         if(item.ID == curSelected){
-            FlxTween.tween(item.scale, {x: 0.8, y: 0.8}, 0.1, {ease: FlxEase.smootherStepInOut});
-            FlxTween.tween(item, {alpha: 1}, 0.1);
+            item.alpha = lerp(item.alpha, 1, 0.3);
         }else{
-            FlxTween.tween(item.scale, {x: 0.7, y: 0.7}, 0.1, {ease: FlxEase.smootherStepInOut});
-            FlxTween.tween(item, {alpha: 0.5}, 0.1);
+            item.alpha = lerp(item.alpha, 0.5, 0.3);
         }
     });
 }

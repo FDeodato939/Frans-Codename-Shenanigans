@@ -1,0 +1,12 @@
+<!DOCTYPE codename-engine-character>
+<character x="80" y="180" sprite="evad" isPlayer="true" icon="evad" color="#f0a000">
+	<anim name="idle" anim="idle" x="0" y="0" fps="24" loop="false"/>
+	<anim name="singLEFT" anim="left" x="24" y="13" fps="24" loop="false" indices="0..13"/>
+	<anim name="singDOWN" anim="down" x="1" y="18" fps="24" loop="false" indices="0..13"/>
+	<anim name="singUP" anim="up" x="53" y="21" fps="24" loop="false" indices="0..13"/>
+	<anim name="singRIGHT" anim="right" x="19" y="2" fps="24" loop="false" indices="0..13"/>
+	<anim name="singLEFTmiss" anim="leftMiss" x="23" y="13" fps="24" loop="false"/>
+	<anim name="singDOWNmiss" anim="downMiss" x="8" y="12" fps="24" loop="false"/>
+	<anim name="singUPmiss" anim="upMiss" x="64" y="22" fps="24" loop="false"/>
+	<anim name="singRIGHTmiss" anim="rightMiss" x="21" y="0" fps="24" loop="false"/>
+</character>

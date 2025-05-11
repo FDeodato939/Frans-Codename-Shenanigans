@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="doubleTail.png">
+	<!-- Created with Adobe Animate version 24.0.0.305 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="flying0000" x="0" y="0" width="50" height="50"/>
+	<SubTexture name="flying0001" x="50" y="0" width="50" height="50"/>
+	<SubTexture name="idle0000" x="100" y="0" width="50" height="50"/>
+	<SubTexture name="idle0001" x="150" y="0" width="50" height="50"/>
+	<SubTexture name="idle0002" x="200" y="0" width="50" height="50"/>
+	<SubTexture name="idle0003" x="0" y="50" width="50" height="50"/>
+	<SubTexture name="idle0004" x="50" y="50" width="50" height="50"/>
+	<SubTexture name="rolling0000" x="200" y="50" width="50" height="50"/>
+	<SubTexture name="rolling0001" x="0" y="100" width="50" height="50"/>
+	<SubTexture name="rolling0002" x="50" y="100" width="50" height="50"/>
+	<SubTexture name="rolling0003" x="100" y="50" width="50" height="50"/>
+	<SubTexture name="spindash0000" x="150" y="50" width="50" height="50"/>
+	<SubTexture name="spindash0001" x="200" y="50" width="50" height="50"/>
+	<SubTexture name="spindash0002" x="0" y="100" width="50" height="50"/>
+	<SubTexture name="spindash0003" x="50" y="100" width="50" height="50"/>
+</TextureAtlas>

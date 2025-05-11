@@ -1,0 +1,10 @@
+<!DOCTYPE codename-engine-character>
+<character x="70" y="200" sprite="jplolbf" isPlayer="true" icon="bf">
+	<anim name="idle" anim="idle" x="0" y="0" fps="24" loop="false"/>
+	<anim name="pre-attack" anim="pre-attack" x="-11" y="0" fps="24" loop="false"/>
+	<anim name="attack" anim="attack" x="7" y="-1" fps="24" loop="false"/>
+	<anim name="singLEFT" anim="left" x="7" y="-1" fps="24" loop="false"/>
+	<anim name="singDOWN" anim="down" x="8" y="1" fps="24" loop="false"/>
+	<anim name="singUP" anim="up" x="-2" y="-3" fps="24" loop="false"/>
+	<anim name="singRIGHT" anim="right" x="10" y="0" fps="24" loop="false"/>
+</character>
