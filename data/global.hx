@@ -1,10 +1,10 @@
 // library
 import funkin.backend.utils.WindowUtils;
 // variable
-static var customStates:Map<FlxState, String> = [
+var customStates:Map<FlxState, String> = [
     TitleState => 'custom/title',
     MainMenuState => 'custom/mainMenu',
-    FreeplayState => 'custom/overworld',
+    FreeplayState => 'custom/freeplay',
 ];
 // functions
 function preStateSwitch(){

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="mario.png">
+	<!-- Created with Adobe Animate version 24.0.0.305 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="down0000" x="0" y="0" width="30" height="40"/>
+	<SubTexture name="downHolding0000" x="30" y="0" width="30" height="40"/>
+	<SubTexture name="falling0000" x="60" y="0" width="30" height="40"/>
+	<SubTexture name="idle0000" x="90" y="0" width="30" height="40"/>
+	<SubTexture name="idleHolding0000" x="120" y="0" width="30" height="40"/>
+	<SubTexture name="jumpRunning0000" x="150" y="0" width="30" height="40"/>
+	<SubTexture name="jumping0000" x="180" y="0" width="30" height="40"/>
+	<SubTexture name="kicked0000" x="210" y="0" width="30" height="40"/>
+	<SubTexture name="running0000" x="0" y="40" width="30" height="40"/>
+	<SubTexture name="running0001" x="30" y="40" width="30" height="40"/>
+	<SubTexture name="running0002" x="60" y="40" width="30" height="40"/>
+	<SubTexture name="sliding0000" x="90" y="40" width="30" height="40"/>
+	<SubTexture name="spinJump0000" x="90" y="0" width="30" height="40"/>
+	<SubTexture name="spinJump0001" x="120" y="40" width="30" height="40"/>
+	<SubTexture name="spinJump0002" x="150" y="40" width="30" height="40"/>
+	<SubTexture name="spinJump0003" x="180" y="40" width="30" height="40"/>
+	<SubTexture name="swimHolding0000" x="210" y="40" width="30" height="40"/>
+	<SubTexture name="swimHolding0001" x="0" y="80" width="30" height="40"/>
+	<SubTexture name="swimHolding0002" x="30" y="80" width="30" height="40"/>
+	<SubTexture name="swimming0000" x="60" y="80" width="30" height="40"/>
+	<SubTexture name="swimming0001" x="90" y="80" width="30" height="40"/>
+	<SubTexture name="swimming0002" x="120" y="80" width="30" height="40"/>
+	<SubTexture name="up0000" x="150" y="80" width="30" height="40"/>
+	<SubTexture name="upHolding0000" x="180" y="80" width="30" height="40"/>
+	<SubTexture name="victory0000" x="210" y="80" width="30" height="40"/>
+	<SubTexture name="walkHolding0000" x="0" y="120" width="30" height="40"/>
+	<SubTexture name="walkHolding0001" x="30" y="120" width="30" height="40"/>
+	<SubTexture name="walkHolding0002" x="120" y="0" width="30" height="40"/>
+	<SubTexture name="walking0000" x="60" y="120" width="30" height="40"/>
+	<SubTexture name="walking0001" x="90" y="120" width="30" height="40"/>
+	<SubTexture name="walking0002" x="90" y="0" width="30" height="40"/>
+</TextureAtlas>

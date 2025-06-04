@@ -6,7 +6,7 @@ import flixel.addons.display.FlxBackdrop;
 import flixel.text.FlxTextBorderStyle;
 import flixel.effects.FlxFlicker;
 // variables
-var itemList:Array<String> = ['overworld', 'options'];
+var itemList:Array<String> = ['freeplay', 'demos', 'options'];
 var isSelected:Bool = false;
 var curSelected:Int = 0;
 // functions
@@ -20,14 +20,13 @@ function create(){
     // itemGroup
     add(itemGroup = new FlxGroup());
     for(items in 0...itemList.length){
-        itemGroup.add(item = new FlxText(0, 0, FlxG.width, itemList[items].toUpperCase(), 42));
+        itemGroup.add(item = new FlxText(0, 335, FlxG.width, itemList[items].toUpperCase(), 96));
+        item.font = Paths.font('Tardling v1.1.ttf');
         item.alignment = 'center';
         item.borderStyle = FlxTextBorderStyle.OUTLINE;
         item.borderSize = 3;
         item.ID = items;
     }
-    itemGroup.members[0].y = 290;
-    itemGroup.members[1].y = 390;
     // cinematicGroup
     add(cinematicGroup = new FlxGroup());
     for(i in 0...2){
@@ -80,16 +79,32 @@ function update(elapsed){
             // isSelected
             isSelected = true;
         }
-        if(controls.UP_P){
+        if(controls.LEFT_P){
             // sound
             FlxG.sound.play(Paths.sound('menu/scroll'));
             // curSelected
             curSelected -= 1;
-        }else if(controls.DOWN_P){
+        }else if(controls.RIGHT_P){
             // sound
             FlxG.sound.play(Paths.sound('menu/scroll'));
             // curSelected
             curSelected += 1;
+        }
+        if(FlxG.keys.justPressed.S){
+            // sound
+            FlxG.sound.play(Paths.sound('menu/confirm'));
+            // switchState
+            new FlxTimer().start(0.85, function(){FlxG.switchState(new ModState('custom/demos/sonic'));});
+            // isSelected
+            isSelected = true;
+        }
+        if(FlxG.keys.justPressed.M){
+            // sound
+            FlxG.sound.play(Paths.sound('menu/confirm'));
+            // switchState
+            new FlxTimer().start(0.85, function(){FlxG.switchState(new ModState('custom/demos/mario'));});
+            // isSelected
+            isSelected = true;
         }
     }
     // curSelected
@@ -105,5 +120,6 @@ function update(elapsed){
         }else{
             item.alpha = lerp(item.alpha, 0.5, 0.3);
         }
+        item.x = lerp(item.x, (item.ID - curSelected) * 640, 0.3);
     });
 }
